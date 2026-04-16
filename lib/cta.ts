@@ -1,10 +1,11 @@
 import { siteConfig } from '@/lib/site-config';
 import type { CalculatorData } from '@/data/calculators';
 
-export function getCalculatorCtaHref(target: CalculatorData['ctaLink'] | string) {
-  if (target === 'flippingLedger') {
-    return siteConfig.links.flippingLedger;
-  }
+const ctaDestinations = {
+  flippingLedger: siteConfig.links.flippingLedger,
+  gigShiftLedger: siteConfig.links.gigShiftLedger,
+} as const;
 
-  return siteConfig.links.gigShiftLedger;
+export function getCalculatorCtaHref(target: CalculatorData['ctaLink']) {
+  return ctaDestinations[target];
 }
