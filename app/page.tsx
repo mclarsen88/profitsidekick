@@ -6,24 +6,19 @@ import { calculators } from '@/data/calculators';
 import { siteConfig } from '@/lib/site-config';
 
 export default function HomePage() {
-  const featuredCalculators = calculators.slice(0, 3);
-
   return (
     <>
       <section className="hero container">
         <p className="eyebrow">ProfitSidekick.com</p>
-        <h1>Simple business calculators for side hustlers, gig workers, and resellers.</h1>
-        <p className="hero-lead">
-          ProfitSidekick is a practical calculator and learning hub for people earning income outside a traditional
-          9-to-5. Use these tools to estimate trip earnings, resale profits, and effective hourly rate so you can make
-          better pricing, sourcing, and scheduling decisions.
+        <h1>Practical calculators for side hustlers, gig workers, resellers, and small operators.</h1>
+        <p>
+          ProfitSidekick helps you estimate fares, profits, and hourly earnings quickly so you can make better
+          decisions on gigs, sourcing, and pricing. Explore our calculator library built for people running lean,
+          real-world businesses.
         </p>
         <div className="button-row">
           <Link className="button" href="/calculators">
             Browse all calculators
-          </Link>
-          <Link className="button button-muted" href="/calculators/hourly-rate-calculator">
-            Start with hourly rate
           </Link>
         </div>
       </section>
@@ -31,83 +26,56 @@ export default function HomePage() {
       <section className="container page-section">
         <SectionHeading
           title="Featured calculators"
-          subtitle="These are the most useful starting points for quick earnings and profit checks."
+          subtitle="Start with three high-impact tools for mileage earnings, resale margins, and hourly performance."
         />
-        <p className="section-intro">
-          Jump straight into the tool you need: estimate a fare before accepting a trip, check the margin before
-          buying inventory, or confirm what your shift really paid per hour.
-        </p>
         <div className="card-grid">
-          {featuredCalculators.map((calculator) => (
+          {calculators.map((calculator) => (
             <CalculatorCard key={calculator.slug} calculator={calculator} />
           ))}
         </div>
-        <p className="inline-link-row">
-          Popular picks:{' '}
-          <Link href="/calculators/uber-fare-calculator">Uber Fare Calculator</Link> ·{' '}
-          <Link href="/calculators/reseller-profit-calculator">Reseller Profit Calculator</Link> ·{' '}
-          <Link href="/calculators/hourly-rate-calculator">Hourly Rate Calculator</Link>
-        </p>
       </section>
 
       <section className="container page-section">
-        <SectionHeading title="Who ProfitSidekick is for" />
+        <SectionHeading
+          title="Related tools for serious operators"
+          subtitle="When you are ready to move from quick estimates to complete tracking, these tools can help."
+        />
         <div className="two-column">
           <article className="card">
-            <h3>Gig workers and delivery drivers</h3>
+            <h3>FlippingLedger for resellers</h3>
             <p>
-              If you drive, deliver, or stack app-based shifts, these calculators help you evaluate routes, compare
-              shifts, and understand earnings per hour with less guesswork.
+              Track inventory, sold listings, fees, and net profit in one place. Ideal for resellers and product
+              flippers focused on margin.
             </p>
-            <Link className="text-link" href="/calculators/uber-fare-calculator">
-              Estimate trip earnings →
-            </Link>
+            <a href={siteConfig.links.flippingLedger} target="_blank" rel="noreferrer" className="text-link">
+              Visit FlippingLedger →
+            </a>
           </article>
           <article className="card">
-            <h3>Resellers, flippers, and marketplace sellers</h3>
+            <h3>GigShiftLedger for gig workers</h3>
             <p>
-              If you source items to resell, use these tools to check margin before you buy and to avoid losing profit
-              to fees and shipping costs.
+              Monitor mileage, shift earnings, and effective hourly rate so you can optimize platform and schedule
+              choices.
             </p>
-            <Link className="text-link" href="/calculators/reseller-profit-calculator">
-              Check resale margin →
-            </Link>
-          </article>
-        </div>
-      </section>
-
-      <section className="container page-section">
-        <SectionHeading title="Why these calculators are useful" />
-        <div className="three-column">
-          <article className="card">
-            <h3>Faster decisions</h3>
-            <p>
-              Run quick scenarios in seconds before accepting work, buying inventory, or changing your prices.
-            </p>
-          </article>
-          <article className="card">
-            <h3>Clearer numbers</h3>
-            <p>Break earnings and profit into simple formulas so you can spot what is actually worth your time.</p>
-          </article>
-          <article className="card">
-            <h3>Better planning</h3>
-            <p>Use consistent estimates to set daily goals and improve how you run your side business over time.</p>
+            <a href={siteConfig.links.gigShiftLedger} target="_blank" rel="noreferrer" className="text-link">
+              Visit GigShiftLedger →
+            </a>
           </article>
         </div>
       </section>
 
       <section className="container page-section two-column">
         <CtaBanner
-          title="For resellers: move from quick estimates to full profit tracking"
-          description="FlippingLedger helps you track inventory, sold items, fees, and net profit so your resale numbers stay organized as you scale."
+          title="Need better resale profit tracking?"
+          description="Move from single-item estimates to full business-level insight on cost, fees, and margins."
           href={siteConfig.links.flippingLedger}
-          label="Explore FlippingLedger"
+          label="Go to FlippingLedger"
         />
         <CtaBanner
-          title="For gig workers: track real shift performance"
-          description="GigShiftLedger helps drivers and delivery workers monitor earnings, mileage, expenses, and effective hourly results across platforms."
+          title="Want clearer gig earnings insights?"
+          description="Compare shifts and routes with accurate logs for income, expenses, and hourly outcomes."
           href={siteConfig.links.gigShiftLedger}
-          label="Explore GigShiftLedger"
+          label="Go to GigShiftLedger"
         />
       </section>
     </>

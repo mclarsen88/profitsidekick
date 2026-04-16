@@ -7,6 +7,5 @@ const ctaDestinations = {
 } as const;
 
 export function getCalculatorCtaHref(target: CalculatorData['ctaLink']) {
-  const key = target as keyof typeof ctaDestinations;
-  return ctaDestinations[key] ?? siteConfig.links.gigShiftLedger;
+  return ctaDestinations[target];
 }
