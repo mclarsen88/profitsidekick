@@ -21,7 +21,7 @@ export type CalculatorData = {
   faqs: { question: string; answer: string }[];
   ctaTitle: string;
   ctaDescription: string;
-  ctaLink: 'flippingLedger' | 'gigShiftLedger';
+  ctaLink: string;
   ctaLabel: string;
 };
 

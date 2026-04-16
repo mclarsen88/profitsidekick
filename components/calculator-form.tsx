@@ -16,22 +16,23 @@ function safeNumber(value: string) {
   return Number.isFinite(num) ? num : 0;
 }
 
-const calculatorHandlers: Record<CalculatorData['kind'], (values: Values) => number> = {
-  uberFare: (values) => safeNumber(values.miles) * safeNumber(values.ratePerMile),
-  resellerProfit: (values) =>
-    safeNumber(values.salePrice) -
-    safeNumber(values.itemCost) -
-    safeNumber(values.fees) -
-    safeNumber(values.shipping),
-  hourlyRate: (values) => {
-    const hours = safeNumber(values.hours);
-    if (hours <= 0) return 0;
-    return safeNumber(values.earnings) / hours;
-  },
-};
-
 function calculate(kind: CalculatorData['kind'], values: Values): number {
-  return calculatorHandlers[kind](values);
+  if (kind === 'uberFare') {
+    return safeNumber(values.miles) * safeNumber(values.ratePerMile);
+  }
+
+  if (kind === 'resellerProfit') {
+    return (
+      safeNumber(values.salePrice) -
+      safeNumber(values.itemCost) -
+      safeNumber(values.fees) -
+      safeNumber(values.shipping)
+    );
+  }
+
+  const hours = safeNumber(values.hours);
+  if (hours <= 0) return 0;
+  return safeNumber(values.earnings) / hours;
 }
 
 export function CalculatorForm({ calculator }: { calculator: CalculatorData }) {
