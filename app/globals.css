@@ -69,11 +69,6 @@ main {
 
 .hero {
   padding: 4rem 0 2rem;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #f9fbfb 100%);
-  padding-inline: 1.4rem;
-  margin-top: 1.2rem;
 }
 
 .eyebrow {
@@ -107,20 +102,6 @@ p {
   color: var(--muted);
 }
 
-.hero-lead {
-  max-width: 70ch;
-}
-
-.section-intro {
-  margin: 0 0 1rem;
-  max-width: 72ch;
-}
-
-.inline-link-row {
-  margin-top: 0.9rem;
-  font-size: 0.95rem;
-}
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -133,12 +114,6 @@ p {
   gap: 1rem;
 }
 
-.three-column {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1rem;
-}
-
 .card,
 .calculator,
 .cta-banner,
@@ -148,7 +123,6 @@ p {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
 .text-link {
@@ -171,16 +145,6 @@ p {
 .button:hover {
   background: var(--brand-dark);
   text-decoration: none;
-}
-
-.button-muted {
-  background: #e9f4f3;
-  color: var(--brand-dark);
-  margin-left: 0.5rem;
-}
-
-.button-muted:hover {
-  background: #d8ece9;
 }
 
 .calculator {
@@ -226,21 +190,8 @@ p {
   margin: 1rem 0;
 }
 
-.content-meta {
-  font-size: 0.95rem;
-}
-
 .content-block ol {
   padding-left: 1.1rem;
-}
-
-.link-list {
-  margin: 0.35rem 0 0;
-  padding-left: 1.1rem;
-}
-
-.link-list li + li {
-  margin-top: 0.35rem;
 }
 
 .faq-list details {

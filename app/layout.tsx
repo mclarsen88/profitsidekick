@@ -7,20 +7,10 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: {
-    default: `${siteConfig.name} | Side Hustle, Gig Work, and Reseller Calculators`,
+    default: `${siteConfig.name} | Calculators for Side Hustlers and Small Operators`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    url: siteConfig.domain,
-    title: `${siteConfig.name} | Side Hustle, Gig Work, and Reseller Calculators`,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
-  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

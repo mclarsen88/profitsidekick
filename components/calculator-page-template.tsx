@@ -74,10 +74,6 @@ export function CalculatorPageTemplate({
       <header>
         <h1>{calculator.h1}</h1>
         <p>{calculator.intro}</p>
-        <p className="content-meta">
-          This calculator is part of the ProfitSidekick library for gig workers, resellers, and side hustle operators.
-          For more tools, visit the <Link href="/calculators">full calculator index</Link>.
-        </p>
       </header>
 
       <CalculatorForm calculator={calculator} />
@@ -86,15 +82,6 @@ export function CalculatorPageTemplate({
       <HowItWorksSection steps={calculator.howItWorks} />
       <FaqSection faqs={calculator.faqs} />
       <RelatedCalculatorsSection calculators={relatedCalculators} />
-
-      <section className="content-block">
-        <h2>Use this result to make a better next decision</h2>
-        <p>
-          After calculating your estimate, compare it with your recent real-world numbers before changing pricing,
-          sourcing, or shift strategy. Consistent comparison is one of the fastest ways to improve side hustle profit
-          and hourly outcomes.
-        </p>
-      </section>
 
       <CtaBanner
         title={calculator.ctaTitle}
